@@ -1,24 +1,25 @@
 ## Motivation
 
-blueprint to implement a library in python. This library may be deployed on pip.
-
-* code to share between several applications
-* domain specific library
-* compliant with different python version
-* ...
+Exemple d'implémentation pour illustrer la conférence ** **
+donnée lors du [meetup crafting datascience du 25/09]().
 
 [![Build Status](https://travis-ci.org/FabienArcellier/blueprint-library-pip.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-library-pip)
 
-## Getting started
+## General Information
 
-1. clone this repository
+* [Presentation - Slide deck]()
+* [Meetup Crafting Datascience]()
 
-2. remove .git directory
+## Focus du meetup
 
-3. use your library identifier as module name
+Le meetup illustre 3 patterns pour effectuer des tests
+qui nécessitent des ressources externes.
 
-    * replace `mylib`, `mylib_tests` by your own identifier
-    * change `.coveragerc`, `Makefile`, `setup.py`, `tox.ini`
+### Isoler les tests d'intégration qui font appels au Filesystem
+
+### Effectuer des tests d'intégration sur elastcisearch
+
+### Effectuer des tests d'intégration sur un émulateur S3
 
 ## The latest version
 
@@ -30,15 +31,23 @@ git clone https://github.com/FabienArcellier/blueprint-library-pip.git
 
 ## Usage
 
-You can run the application with the following command
+1 . instancier un environnement virtuel et installer les dépendances
 
-```python
-import mylib
+```
+virtualenv -p python3 venv
+pip install .
+```
 
-mylib.hello_world()
+2 . exécuter les tests automatiques
+
+```
+. venv/bin/activate; python -u -m unittest discover "$(TEST_MODULE)/"
 ```
 
 ## Developper guideline
+
+D'autres commandes sont packagées dans le `Makefile` et viennent du blueprint de démarrage
+d'une librairie python ``blueprint-lib-pip``.
 
 ```
 $ make
