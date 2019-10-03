@@ -3,12 +3,13 @@
 Exemple d'implémentation pour illustrer la conférence **3 patterns de tests d’intégration avec des ressources externes**
 donnée lors du [meetup crafting datascience du 25/09](https://www.meetup.com/fr-FR/crafting-datascience/events/264211988/).
 
-[![Build Status](https://travis-ci.org/FabienArcellier/blueprint-library-pip.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-library-pip)
+[![Build Status](https://travis-ci.org/octo-cdcv/3_patterns_tests_integration.svg?branch=master)](https://travis-ci.org/octo-cdcv/3_patterns_tests_integration)
 
 ## General Information
 
 * [Presentation - Slide deck](https://fr.slideshare.net/FabienArcellier/3-patterns-de-tests-dintgration-avec-des-ressources-externes/FabienArcellier/3-patterns-de-tests-dintgration-avec-des-ressources-externes)
 * [Meetup Crafting Datascience](https://www.meetup.com/fr-FR/crafting-datascience/)
+* [Blueprint de ce projet](https://github.com/FabienArcellier/blueprint-library-pip)
 
 ## Focus du meetup
 
