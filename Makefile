@@ -13,7 +13,7 @@ dist:
 
 .PHONY: tests
 tests: ## run automatic tests
-	. venv/bin/activate; python -u -m unittest discover "$(TEST_MODULE)/units"
+	. venv/bin/activate; python -u -m unittest discover "$(TEST_MODULE)"
 
 .PHONY: lint
 lint: ## run pylint
