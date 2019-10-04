@@ -18,7 +18,7 @@ qui nécessitent des ressources externes.
 
 ### Isoler les tests d'intégration qui font appels au Filesystem
 
-
+more information in [mylib_tests/integrations/infrastructure/test_documents_store.py](mylib_tests/integrations/infrastructure/test_documents_store.py)
 
 ### Effectuer des tests d'intégration sur elastcisearch
 
