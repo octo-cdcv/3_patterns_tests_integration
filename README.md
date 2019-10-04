@@ -1,6 +1,6 @@
 ## Motivation
 
-Exemple d'implémentation en python pour illustrer la conférence **3 patterns de tests d’intégration avec des ressources externes**
+Exemples d'implémentation en python pour illustrer la conférence **3 patterns de tests d’intégration avec des ressources externes**
 donnée lors du [meetup crafting datascience du 25/09](https://www.meetup.com/fr-FR/crafting-datascience/events/264211988/).
 
 [![Build Status](https://travis-ci.org/octo-cdcv/3_patterns_tests_integration.svg?branch=master)](https://travis-ci.org/octo-cdcv/3_patterns_tests_integration)
