@@ -1,6 +1,9 @@
 import os
 import shutil
+import socket
+import subprocess
 import tempfile
+from contextlib import closing
 
 from decorator import contextmanager
 
@@ -31,3 +34,31 @@ def clone_fixture_up(fixture_name, working_directory=None):
         raise Exception('the fixture {0} does not exists in fixtures : {1}'.format(fixture_name, fixtures_list))
     shutil.copytree(template_working_directory, working_directory)
     return working_directory
+
+
+def docker_fixture_up(fixture_name, working_directory=None):
+    dir = clone_fixture_up(fixture_name, working_directory)
+    try:
+        subprocess.check_output(
+            ['docker-compose', '--file', os.path.join(dir, 'docker-compose.yml'), 'up', '--detach',
+             '--force-recreate'],
+            stderr=subprocess.STDOUT
+        )
+    except subprocess.CalledProcessError as exception:
+        raise OSError(exception.stdout)
+
+    return dir
+
+
+def docker_fixture_down(working_directory=None):
+    subprocess.check_output(
+        ['docker-compose', '--file', os.path.join(working_directory, 'docker-compose.yml'), 'down'],
+        stderr=subprocess.STDOUT
+    )
+    clone_fixture_down(working_directory)
+
+
+def check_port_is_available(host: str, port: int):
+    with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as sock:
+        if sock.connect_ex((host, port)) == 0:
+            raise OSError('port is already used on {0}/{1}'.format(host, port))

@@ -11,6 +11,7 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     install_requires = [
+        'elasticsearch>=6.0.0,<7.0.0'
     ],
     extras_require={
         'dev': [
@@ -18,7 +19,8 @@ setup(
             'coverage',
             'tox',
             'twine',
-            'decorator'
+            'decorator',
+            'docker'
         ]
     },
     classifiers=[
